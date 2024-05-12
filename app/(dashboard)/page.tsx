@@ -1,10 +1,11 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+"use client"
+import { useGetAccounts } from "@/features/accounts/api/use-get-accounts"
 
-export default function Home() {
-  return (
-   <>
-   This is the dashboard page
-   </>
-  );
+export default function Home(){
+  const accountsQuery = useGetAccounts();
+  return(
+    <div>
+      This is the dashboard
+    </div>
+  )
 }
