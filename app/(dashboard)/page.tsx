@@ -4,9 +4,7 @@ import Image from "next/image";
 export default function Home() {
   return (
    <>
-   <Button variant="secondary">
-    Nagarjunaaa ! 
-   </Button>
+   This is the dashboard page
    </>
   );
 }
