@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs'
 import { Query } from "@tanstack/react-query";
 import { QueryProvider } from "@/provider/query-provider";
+import { SheetProvider } from "@/provider/sheet-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({
        <html lang="en">
       <body className={inter.className}>
       <QueryProvider>
+        <SheetProvider/>
         {children}
         </QueryProvider>
         </body>
