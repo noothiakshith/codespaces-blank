@@ -37,7 +37,7 @@ export const AccountForm = ({id,defaultValues,onSubmit,onDelete,disabled}:Props)
     });
 
     const handleSubmit = (Values:Formvalues)=>{
-        console.log(Values)
+        onSubmit(Values);
     }
     const hadleDelete = ()=>{
         onDelete?.();
@@ -59,6 +59,13 @@ export const AccountForm = ({id,defaultValues,onSubmit,onDelete,disabled}:Props)
             </FormItem>
         )}
         />
+        <Button className='w-full' disabled={disabled}>
+            {id?"save changes":"Create Account"}
+        </Button>
+        {!!id && <Button type='button'onClick={hadleDelete} variant ="outline" className='w-full' disabled={disabled}>
+            <Trash size={24}  className='size-4 mr-2' />
+            Delete Account
+        </Button>}
         </form>
        </Form>
     )
