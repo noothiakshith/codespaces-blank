@@ -1,5 +1,5 @@
 import { pgTable,text } from "drizzle-orm/pg-core";
-
+import { createInsertSchema, createSelectSchema } from 'drizzle-zod';
 
 export const accounts = pgTable('acccounts',{
     id:text("id").primaryKey(),
@@ -7,3 +7,5 @@ export const accounts = pgTable('acccounts',{
     name:text("name").notNull(),
     userId:text("user_id").notNull(),
 });
+
+const insertUserschema = createInsertSchema(accounts);
